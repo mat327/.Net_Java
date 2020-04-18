@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Smart_Scale.Models.Pomiar>
+@using System.Data
+
+@{
+    ViewBag.Title = "Wykres pomiarów";
+}
+<h3>@ViewBag.Message</h3>
+
+<p>
+    <img src=@ViewBag.Wykres />
+</p>
+<div>
+    @Html.ActionLink("Powrót do listy użytkowników", "Users")
+</div>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Smart_Scale.Models.Pomiar>
+@using System.Data
+
+@{
+    ViewBag.Title = "Wykres pomiarów";
+}
+<h3>@ViewBag.Message</h3>
+
+<p>
+    @{
+        var myChart = new Chart(width: 1280, height: 720)
+.AddTitle(ViewBag.Message)
+.AddSeries("Default",
+    xValue: Model, xField: "Datadodania",
+ yValues: Model, yFields: "Waga")
+.Write();
+    }
+</p>
