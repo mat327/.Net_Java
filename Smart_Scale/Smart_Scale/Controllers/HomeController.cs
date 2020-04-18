@@ -74,7 +74,7 @@ namespace Smart_Scale.Controllers
             {
                 db.pomiars.Add(pomiar);
                 db.SaveChanges();
-                return RedirectToAction("Users");
+                ViewBag.MessageAdd = "Pomiar został dodany.";
             }
 
             return View(pomiar);
