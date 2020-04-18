@@ -31,7 +31,7 @@
             </td>
             <td>
                 @Html.ActionLink("Pomiary", "Pomiary", new { imie = item.Imie, userid = item.Id, nazwisko = item.Nazwisko })  |
-                @Html.ActionLink("Dodaj pomiar", "Dodajpomiar", new { imie = item.Imie, userid = item.Id, nazwisko = item.Nazwisko })  |
+                @Html.ActionLink("Dodaj pomiar", "Dodajpomiar", new {userid = item.Id})  |
                 @Html.ActionLink("Wykres pomiarów", "ShowWykres", new { imie = item.Imie, userid = item.Id, nazwisko = item.Nazwisko })
             </td>
         </tr>

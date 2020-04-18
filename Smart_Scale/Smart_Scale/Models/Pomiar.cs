@@ -11,7 +11,7 @@ namespace Smart_Scale.Models
         public int Id { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Pole Waga jest wymagane.")]
-       // [RegularExpression(@"(\d{2}),\d{2}", ErrorMessage = "Pole Imię może zawierać tylko litery.")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:0,0.00}")]
         public decimal Waga { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Pole Data dodania jest wymagane.")]

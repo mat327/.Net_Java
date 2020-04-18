@@ -179,6 +179,14 @@
     <Compile Include="Migrations\202004180739342_10.designer.cs">
       <DependentUpon>202004180739342_10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004181750540_11.cs" />
+    <Compile Include="Migrations\202004181750540_11.designer.cs">
+      <DependentUpon>202004181750540_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004181924317_12.cs" />
+    <Compile Include="Migrations\202004181924317_12.designer.cs">
+      <DependentUpon>202004181924317_12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Pomiar.cs" />
     <Compile Include="Models\SmartWeightDbContext.cs" />
@@ -196,6 +204,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -280,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004180739342_10.resx">
       <DependentUpon>202004180739342_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181750540_11.resx">
+      <DependentUpon>202004181750540_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004181924317_12.resx">
+      <DependentUpon>202004181924317_12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

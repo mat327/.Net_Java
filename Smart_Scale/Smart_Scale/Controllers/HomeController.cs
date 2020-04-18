@@ -56,19 +56,21 @@ namespace Smart_Scale.Controllers
             return View(pomiary.ToList());
         }
 
-        public ActionResult Dodajpomiar(string Imie, int? userid, string Nazwisko)
+        public ActionResult Dodajpomiar(int? userid)
         {
-            ViewBag.Message = "Dodaj pomiar dla użytkownika " + Imie + " " + Nazwisko;
+            int? id = userid;
+            User user = db.users.Find(id);
+            ViewBag.Message = "Dodaj pomiar dla użytkownika " + user.Imie + " " + user.Nazwisko;
             var model = new Pomiar() { Datadodania= DateTime.Now};
-            //model.UserId = userid;
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Dodajpomiar([Bind(Include = "Id,Waga,Datadodania,UserId")] Pomiar pomiar)
+        public ActionResult Dodajpomiar([Bind(Include = "Waga,Datadodania,UserId")] Pomiar pomiar)
         {
-            if (ModelState.IsValid)
+            ViewBag.Message =pomiar.Id + "   " + pomiar.Waga + "   " + pomiar.Datadodania + "   " + pomiar.UserId;
+         if (ModelState.IsValid)
             {
                 db.pomiars.Add(pomiar);
                 db.SaveChanges();
