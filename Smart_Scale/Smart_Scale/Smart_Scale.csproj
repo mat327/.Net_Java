@@ -131,10 +131,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004170857272_InitialCreate.cs" />
-    <Compile Include="Migrations\202004170857272_InitialCreate.designer.cs">
-      <DependentUpon>202004170857272_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202004171408225_Pierwsza.cs" />
     <Compile Include="Migrations\202004171408225_Pierwsza.designer.cs">
       <DependentUpon>202004171408225_Pierwsza.cs</DependentUpon>
@@ -166,14 +162,6 @@
     <Compile Include="Migrations\202004171800061_ósma.cs" />
     <Compile Include="Migrations\202004171800061_ósma.designer.cs">
       <DependentUpon>202004171800061_ósma.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004171825427_dziewiąta.cs" />
-    <Compile Include="Migrations\202004171825427_dziewiąta.designer.cs">
-      <DependentUpon>202004171825427_dziewiąta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004180710032_dziewiata.cs" />
-    <Compile Include="Migrations\202004180710032_dziewiata.designer.cs">
-      <DependentUpon>202004180710032_dziewiata.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202004180739342_10.cs" />
     <Compile Include="Migrations\202004180739342_10.designer.cs">
@@ -254,9 +242,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004170857272_InitialCreate.resx">
-      <DependentUpon>202004170857272_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004171408225_Pierwsza.resx">
       <DependentUpon>202004171408225_Pierwsza.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,12 +265,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004171800061_ósma.resx">
       <DependentUpon>202004171800061_ósma.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004171825427_dziewiąta.resx">
-      <DependentUpon>202004171825427_dziewiąta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004180710032_dziewiata.resx">
-      <DependentUpon>202004180710032_dziewiata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004180739342_10.resx">
       <DependentUpon>202004180739342_10.cs</DependentUpon>
