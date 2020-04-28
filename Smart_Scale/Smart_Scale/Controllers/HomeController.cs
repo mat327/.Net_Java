@@ -7,12 +7,15 @@ using System.Web.Mvc;
 using System.Data;
 using System.Data.Entity;
 using System.Web.Helpers;
+using Smart_Scale.Clients;
+using Newtonsoft.Json;
 
 namespace Smart_Scale.Controllers
 {
     public class HomeController : Controller
     {
         private SmartWeightDbContext db = new SmartWeightDbContext();
+        private static Client client = Client.Instance;
 
         public ActionResult Index()
         {
@@ -33,7 +36,7 @@ namespace Smart_Scale.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateUser([Bind(Include = "Id,Imie,Nazwisko")] User user)
+        public ActionResult CreateUser([Bind(Include = "Id,Imie,Nazwisko,Plec,Wzrost,Wiek")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -67,15 +70,26 @@ namespace Smart_Scale.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Dodajpomiar([Bind(Include = "Waga,Datadodania,UserId")] Pomiar pomiar)
+        public ActionResult Dodajpomiar([Bind(Include = "Id,Waga,Datadodania,UserId")] Pomiar pomiar)
         {
-            ViewBag.Message =pomiar.Id + "   " + pomiar.Waga + "   " + pomiar.Datadodania + "   " + pomiar.UserId;
-         if (ModelState.IsValid)
-            {
+            User user = db.users.Find(pomiar.UserId);
+            string Waga = pomiar.Waga.ToString(), Wiek = user.Wiek.ToString(), Plec = user.Plec, Wzrost = user.Wzrost.ToString(); 
+            string response = client.Post2(Waga, Wiek, Plec, Wzrost);
+
+            DTO dto = JsonConvert.DeserializeObject<DTO>(response);
+            pomiar.Bmi = double.Parse(dto.bmi.value, System.Globalization.CultureInfo.InvariantCulture);
+
+            ViewBag.Message = "Dodaj pomiar dla użytkownika " + user.Imie + " " + user.Nazwisko;
+            if (ModelState.IsValid)
+           {
                 db.pomiars.Add(pomiar);
                 db.SaveChanges();
                 ViewBag.MessageAdd = "Pomiar został dodany.";
-            }
+                ViewBag.Bmi = "Twoje Bmi jest równe " + pomiar.Bmi+" .";
+                ViewBag.IdealWeight = "Idealna waga dla użytkownika " + user.Imie + " " + user.Nazwisko + " : " + dto.ideal_weight;
+                ViewBag.Risk = dto.bmi.risk;
+                ViewBag.Status = dto.bmi.status;
+           }
 
             return View(pomiar);
         }
@@ -90,17 +104,27 @@ namespace Smart_Scale.Controllers
 
         public ActionResult Wykres(string Imie, int? userid, string Nazwisko)
         {
-            ViewBag.Message = "Wykres pomiarów użytkownika "+ Imie + " " + Nazwisko;
+            ViewBag.Message = "Wykres wagi użytkownika "+ Imie + " " + Nazwisko;
             var pomiary = from m in db.pomiars
                           select m;
             pomiary = pomiary.Where(s => s.UserId == userid);
            return View(pomiary.ToList());
         }
 
+        public ActionResult Wykres2(string Imie, int? userid, string Nazwisko)
+        {
+            ViewBag.Message = "Wykres wskaźnika BMI użytkownika " + Imie + " " + Nazwisko;
+            var pomiary = from m in db.pomiars
+                          select m;
+            pomiary = pomiary.Where(s => s.UserId == userid);
+            return View(pomiary.ToList());
+        }
+
         public ActionResult ShowWykres(string Imie, int? userid, string Nazwisko)
         {
             ViewBag.Message = "Wykres pomiarów użytkownika " + Imie + " " + Nazwisko;
             ViewBag.Wykres = "Wykres?imie="+Imie+"&userid="+userid+"&nazwisko="+Nazwisko;
+            ViewBag.Wykres2 = "Wykres2?imie=" + Imie + "&userid=" + userid + "&nazwisko=" + Nazwisko;
             return View();
         }
 

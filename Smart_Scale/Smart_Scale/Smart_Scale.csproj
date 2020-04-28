@@ -53,6 +53,12 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -106,9 +112,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -127,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Clients\Client.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,7 +179,28 @@
     <Compile Include="Migrations\202004181924317_12.designer.cs">
       <DependentUpon>202004181924317_12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004271219191_13.cs" />
+    <Compile Include="Migrations\202004271219191_13.designer.cs">
+      <DependentUpon>202004271219191_13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004281045002_14.cs" />
+    <Compile Include="Migrations\202004281045002_14.designer.cs">
+      <DependentUpon>202004281045002_14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004281051184_15.cs" />
+    <Compile Include="Migrations\202004281051184_15.designer.cs">
+      <DependentUpon>202004281051184_15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004281058084_16.cs" />
+    <Compile Include="Migrations\202004281058084_16.designer.cs">
+      <DependentUpon>202004281058084_16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004281227141_18.cs" />
+    <Compile Include="Migrations\202004281227141_18.designer.cs">
+      <DependentUpon>202004281227141_18.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DTO.cs" />
     <Compile Include="Models\Pomiar.cs" />
     <Compile Include="Models\SmartWeightDbContext.cs" />
     <Compile Include="Models\User.cs" />
@@ -224,6 +249,7 @@
     <Content Include="Views\Home\Dodajpomiar.cshtml" />
     <Content Include="Views\Home\Wykres.cshtml" />
     <Content Include="Views\Home\ShowWykres.cshtml" />
+    <Content Include="Views\Home\Wykres2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,6 +300,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004181924317_12.resx">
       <DependentUpon>202004181924317_12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004271219191_13.resx">
+      <DependentUpon>202004271219191_13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004281045002_14.resx">
+      <DependentUpon>202004281045002_14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004281051184_15.resx">
+      <DependentUpon>202004281051184_15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004281058084_16.resx">
+      <DependentUpon>202004281058084_16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004281227141_18.resx">
+      <DependentUpon>202004281227141_18.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

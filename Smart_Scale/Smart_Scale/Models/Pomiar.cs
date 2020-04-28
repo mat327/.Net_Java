@@ -11,12 +11,12 @@ namespace Smart_Scale.Models
         public int Id { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Pole Waga jest wymagane.")]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:0,0.00}")]
-        public decimal Waga { get; set; }
+        public int Waga { get; set; }
 
         [System.ComponentModel.DataAnnotations.Required(ErrorMessage = "Pole Data dodania jest wymagane.")]
         [System.ComponentModel.DataAnnotations.DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:MM}", ApplyFormatInEditMode = true)]
         public DateTime Datadodania  { get; set; }
+        public double Bmi { get; set; }
         public virtual User User { get; set; }
         public int UserId { get; set; }
     }

@@ -12,6 +12,9 @@
             Waga w kg
         </th>
         <th>
+            BMI
+        </th>
+        <th>
             Data dodania
         </th>
         <th></th>
@@ -19,17 +22,20 @@
 
     @foreach (var m in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => m.Waga)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => m.Datadodania)
-            </td>
-            <td>
-                @Html.ActionLink("Usuń pomiar", "Delete", new { id = m.Id, userid = m.UserId})
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => m.Waga)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => m.Bmi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => m.Datadodania)
+    </td>
+    <td>
+        @Html.ActionLink("Usuń pomiar", "Delete", new { id = m.Id, userid = m.UserId })
+    </td>
+</tr>
     }
 </table>
 <div>
