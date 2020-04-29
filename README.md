@@ -6,21 +6,25 @@ Dodatkowo został utworzony projekt z testami jednostkowymi, sprawdzającymi obs
 
 # Dotychczas dodane funkcjonalności 
 - Dodawanie użytkowników
-![Dodawanie użytkownika](misc/AddUser.JPG)
+![Dodawanie użytkownika](misc/AddUser2.JPG)
 - Wyświetlanie listy użytkowników z opcjami dla każdego z nich
 ![Lista użytkowników](misc/Users.JPG)
 - Wyświetlanie listy pomiarów dla danego użytkownika z opcją usunięcia danego pomiaru
-![Lista pomiarów użytkownika](misc/Pomiary.JPG)
+![Lista pomiarów użytkownika](misc/Pomiary2.JPG)
 - Dodawanie pomiaru do danego użytkownika
 ![Dodawanie pomiaru dla użytkownika](misc/AddPomiar.JPG)
-- Wyświetlanie wykresu z pomiarami uzytkownika
-![Wykres pomiarów użytkownika](misc/Wykres.JPG)
+- Odpowiedź zwrotna po dodaniu pomiaru
+![Dodawanie pomiaru dla użytkownika](misc/AddPomiar2.JPG)
+- Wyświetlanie wykresów z pomiarami uzytkownika
+![Wykres pomiarów użytkownika](misc/Wykres2.JPG)
+![Wykres pomiarów użytkownika](misc/Wykres3.JPG)
 
 # Dodawanie użytkownika i pomiaru
 Przy dodawaniu użytkownika pola Imię oraz Nazwisko nie mogą być puste oraz mają być w nich tylko litery.
 W przypadku złego wprowadzenia danych do tych pól pod polami pojawią się czerwone komunikaty informujące o danym wymogu.
 
 Przy dodawaniu pomiaru dla użytkownika pole Data dodania jest wypełniane automatycznie przykładową datą w celu pokazania odpowiedniego formaty wprowadzenia daty.W przypadku złego formatu pod polem pojawi się komunikat o błędnym formacie.
+Po zatwierdzeniu dodania pomiaru, dane użytkownika (wzrost, płeć, wiek) oraz waga, którą podał, wysyłane są do zewnętrznego API. Zewnetrzne API na ich podstawie wysyła odpowiedź z informacjami które wyświetlane są na stronie wraz z informacją o zapisaniu pomiaru. Dodatkowo wartość wskaźnika Bmi przekazana przez zewnętrzne API zostaje zapisana do pomiarów użytkownika.
 
 # Testy jednostkowe
 - Sprawdzające poprawność wyświetlania widoków strony głównej, kontaktu, informacji. 
@@ -67,4 +71,3 @@ Przy dodawaniu pomiaru dla użytkownika pole Data dodania jest wypełniane autom
             Assert.AreEqual(Iloscpo+1, Iloscprzed);
         }
 ```
-
