@@ -2,6 +2,7 @@
 Repozytorium zawier projekt tworzony w ramach zajęć .Net-Java Platformy programistyczne.
 Projekt tworzony jest w języku C# na platformę ASP.Net Core z użyciem technologi MVC.
 Projekt wykorzystuje zewnetrzne zależności Entity Framework do komunikacji z lokalną bazą danych.
+Komunikuje się również z zewnetrznym API w celu obliczenia wskaźnika BMI dla uzytkownika, oraz pobrania informacji takich jak odpowiedni przedział wagowy dla uzytkownika.
 Dodatkowo został utworzony projekt z testami jednostkowymi, sprawdzającymi obsługę lokalnej bazy danych.
 
 # Dotychczas dodane funkcjonalności 
