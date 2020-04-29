@@ -24,7 +24,7 @@ Dodatkowo został utworzony projekt z testami jednostkowymi, sprawdzającymi obs
 Przy dodawaniu użytkownika pola Imię oraz Nazwisko nie mogą być puste oraz mają być w nich tylko litery.
 W przypadku złego wprowadzenia danych do tych pól pod polami pojawią się czerwone komunikaty informujące o danym wymogu.
 
-Przy dodawaniu pomiaru dla użytkownika pole Data dodania jest wypełniane automatycznie przykładową datą w celu pokazania odpowiedniego formaty wprowadzenia daty.W przypadku złego formatu pod polem pojawi się komunikat o błędnym formacie.
+Przy dodawaniu pomiaru dla użytkownika pole Data dodania jest wypełniane automatycznie przykładową datą w celu pokazania odpowiedniego formatu wprowadzenia daty. W przypadku złego formatu pod polem pojawi się komunikat o błędnym formacie.
 Po zatwierdzeniu dodania pomiaru, dane użytkownika (wzrost, płeć, wiek) oraz waga, którą podał, wysyłane są do zewnętrznego API. Zewnetrzne API na ich podstawie wysyła odpowiedź z informacjami które wyświetlane są na stronie wraz z informacją o zapisaniu pomiaru. Dodatkowo wartość wskaźnika Bmi przekazana przez zewnętrzne API zostaje zapisana do pomiarów użytkownika.
 
 # Testy jednostkowe
