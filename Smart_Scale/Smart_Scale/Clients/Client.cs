@@ -30,37 +30,6 @@ namespace Smart_Scale.Clients
         }
 
 
-        public async Task<string> PostAsync()
-        {
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(API_BASE_URL);
-
-            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-            request.ContentType = content_type;
-            request.Accept = content_type;
-            request.Method = "POST";
-
-            request.Headers.Add("x-rapidapi-host", "bmi.p.rapidapi.com");
-            request.Headers.Add("x-rapidapi-key", key);
-
-            string data = "{\"weight\":{\"value\":\"85.00\",\"unit\":\"kg\"},\"height\":{\"value\":\"170.00\",\"unit\":\"cm\"},\"sex\":\"m\",\"age\":\"24\",\"waist\":\"\",\"hip\":\"\"}";
-
-            byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-
-            using (Stream requestBody = request.GetRequestStream())
-            {
-                await requestBody.WriteAsync(dataBytes, 0, dataBytes.Length);
-            }
-
-            using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                return await reader.ReadToEndAsync();
-            }
-        }
-
-
         public string Post2(string Waga, string Wiek, string Plec, string Wzrost)
         {
             var client = new RestClient("https://bmi.p.rapidapi.com/");
