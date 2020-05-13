@@ -96,3 +96,37 @@
 2020-05-13 14:19:57,267 [12] INFO  - Wyœwietlenie listy u¿ytkowników
 2020-05-13 14:20:00,244 [13] INFO  - Wyœwietlenie strony Kontakt
 2020-05-13 14:20:01,431 [12] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:35:31,004 [6] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:35:34,406 [6] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:35:39,419 [6] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 27
+2020-05-13 14:35:39,494 [13] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 27
+2020-05-13 14:35:39,494 [14] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 27
+2020-05-13 14:35:39,499 [14] INFO  - Pobrano pomiary dla u¿ytkownika o id = 27 z bazy danych
+2020-05-13 14:35:39,499 [13] INFO  - Pobrano pomiary dla u¿ytkownika o id = 27 z bazy danych
+2020-05-13 14:35:49,280 [6] INFO  - Wywo³anie strony z pomiarami u¿ytkownika o id = 27
+2020-05-13 14:35:49,325 [16] INFO  - Znaleziono u¿ytkownika o id = 27
+2020-05-13 14:35:49,326 [16] INFO  - Znaleziono pomiary u¿ytkownika o id = 27
+2020-05-13 14:35:49,326 [16] INFO  - Wyœwietlenie listy pomiarów u¿ytkownika o id = 27
+2020-05-13 14:35:50,544 [14] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:36:01,344 [13] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 26
+2020-05-13 14:36:01,394 [6] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 26
+2020-05-13 14:36:01,394 [16] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 26
+2020-05-13 14:36:01,395 [6] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych
+2020-05-13 14:36:01,395 [16] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych
+2020-05-13 14:36:48,633 [10] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:36:51,388 [10] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:36:55,251 [10] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 26
+2020-05-13 14:36:55,325 [13] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 26
+2020-05-13 14:36:55,328 [13] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych
+2020-05-13 14:37:54,118 [10] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:37:56,005 [10] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:38:00,175 [13] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 26
+2020-05-13 14:38:00,250 [14] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 26
+2020-05-13 14:38:00,253 [14] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych
+2020-05-13 14:39:09,493 [8] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:39:12,447 [8] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:39:16,262 [8] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 26
+2020-05-13 14:39:16,340 [12] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 26
+2020-05-13 14:39:16,340 [11] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 26
+2020-05-13 14:39:16,343 [11] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych
+2020-05-13 14:39:16,343 [12] INFO  - Pobrano pomiary dla u¿ytkownika o id = 26 z bazy danych

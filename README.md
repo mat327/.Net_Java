@@ -1,9 +1,18 @@
 # Smart Scale
 Repozytorium zawier projekt tworzony w ramach zajęć .Net-Java Platformy programistyczne.
 Projekt tworzony jest w języku C# na platformę ASP.Net Core z użyciem technologi MVC.
-Projekt wykorzystuje zewnetrzne zależności Entity Framework do komunikacji z lokalną bazą danych.
-Komunikuje się również z zewnetrznym API w celu obliczenia wskaźnika BMI dla użytkownika, oraz pobrania informacji takich jak odpowiedni przedział wagowy dla użytkownika.
+Projekt wykorzystuje zewnętrzne zależności Entity Framework do komunikacji z lokalną bazą danych.
+Komunikuje się również z zewnetrznym API w celu obliczenia wskaźnika BMI dla użytkownika, oraz pobrania informacji takich jak odpowiedni przedział wagowy dla użytkownika. Komunikacja z zewnętrznym API odbywa się za pomocą http request przy pomocy pakietu RestSharp. Do zmapowania odpowiedzi JSON z zewnętrznego API do obiektu POCO-Plain old C# object wykkorzystywany jest pakiet Newtonsoft.Json. Za zapis dziennika zdarzęń odpowiedzialny jest pakiet log4net. 
 Dodatkowo został utworzony projekt z testami jednostkowymi, sprawdzającymi obsługę lokalnej bazy danych.
+## Zainstalowane zależności
+| Nr    		| Name 												| version		|
+| :------------:| :------------:									| :------------:|
+| 1.  			| EntityFramework 									| 6.4.0			|
+| 2.  			| Newtonsoft.Json									| 12.0.3		|
+| 3.  			| RestSharp                                         | 106.10.1 		|
+| 4.			| log4net                   						| 2.0.8 		|
+| 5.			| MSTest.TestAdapter								| 1.2.0			|
+| 6.			| MSTest.TestFramework								| 1.2.0			|
 
 # Dotychczas dodane funkcjonalności 
 - Dodawanie użytkowników
