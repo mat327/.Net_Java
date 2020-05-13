@@ -1,1 +1,98 @@
-2020-05-08 12:37:52,730 [6] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 12:42:54,994 [10] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 12:42:59,570 [10] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 12:43:01,136 [11] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:43:08,825 [10] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 28
+2020-05-13 12:43:08,913 [12] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 28
+2020-05-13 12:43:08,916 [10] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 28
+2020-05-13 12:43:08,919 [12] INFO  - Pobrano pomiary dla u¿ytkownika o id = 28 z bazy danych
+2020-05-13 12:43:08,919 [10] INFO  - Pobrano pomiary dla u¿ytkownika o id = 28 z bazy danych
+2020-05-13 12:43:13,836 [10] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:43:18,726 [10] INFO  - Wyœwietlenie formularza dodawania pomiaru dla u¿ytkownika o  id = 28
+2020-05-13 12:43:18,764 [10] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 12:43:24,842 [11] DEBUG - Przekazany model : 0 13.05.2020 12:05:00 28
+2020-05-13 12:43:24,844 [11] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 12:43:25,803 [11] DEBUG - Otrzymana odp od zew API : {"weight":{"kg":"0.00","lb":"0.00"},"height":{"m":"1.23","cm":"123.00","in":"48.43","ft-in":"4-0.4"},"bmi":{"value":"0.0","status":"Severely underweight","risk":"Risk of developing problems such as nutritional deficiency and osteoporosis","prime":"0.0"},"ideal_weight":"14.9kg to 18.2kg","surface_area":"0.00","ponderal_index":"0.0","bmr":{"value":"659.00"},"whtr":{"value":"0.00","status":"Abnormally Slim to Underweight"}}
+2020-05-13 12:43:25,966 [11] INFO  - Odp zew API zapisana do obiektu dto
+2020-05-13 12:43:25,966 [11] INFO  - Dodano BMI do obiektu pomiar, BMI = 0
+2020-05-13 12:43:25,967 [11] WARN  - Przekazany obiekt jest nieprawid³owy
+2020-05-13 12:43:25,967 [11] INFO  - Wyœwietlenie formularza dodawania pomiaru dla u¿ytkownika o  id = 28
+2020-05-13 12:43:32,089 [10] DEBUG - Przekazany model : 87 13.05.2020 12:05:00 28
+2020-05-13 12:43:32,091 [10] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 12:43:32,444 [10] DEBUG - Otrzymana odp od zew API : {"weight":{"kg":"87.00","lb":"191.80"},"height":{"m":"1.23","cm":"123.00","in":"48.43","ft-in":"4-0.4"},"bmi":{"value":"57.5","status":"Obese Class III (Very severely obese)","risk":"High risk of developing heart disease, high blood pressure, stroke, diabetes","prime":"2.5"},"ideal_weight":"14.9kg to 18.2kg","surface_area":"1.57","ponderal_index":"46.8","bmr":{"value":"1529.00"},"whtr":{"value":"0.00","status":"Abnormally Slim to Underweight"}}
+2020-05-13 12:43:32,444 [10] INFO  - Odp zew API zapisana do obiektu dto
+2020-05-13 12:43:32,444 [10] INFO  - Dodano BMI do obiektu pomiar, BMI = 57,5
+2020-05-13 12:43:32,444 [10] INFO  - Przekazany obiekt jest prawid³owy
+2020-05-13 12:43:32,667 [10] INFO  - Pomiar dodany do bazy danych
+2020-05-13 12:43:32,672 [10] INFO  - Wyœwietlenie informacji o dodanym pomiarze dla u¿ytkownika o  id = 28
+2020-05-13 12:43:47,934 [10] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:43:51,077 [10] INFO  - Wywo³anie strony z pomiarami u¿ytkownika o id = 28
+2020-05-13 12:43:51,081 [10] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 12:43:51,082 [10] INFO  - Znaleziono pomiary u¿ytkownika o id = 28
+2020-05-13 12:43:51,082 [10] INFO  - Wyœwietlenie listy pomiarów u¿ytkownika o id = 28
+2020-05-13 12:43:53,856 [10] INFO  - Wywoa³no usuniêcie pomiaru id =51, u¿ytkownika o id = 28
+2020-05-13 12:43:53,859 [10] INFO  - Znaleziono pomiar o id = 51
+2020-05-13 12:43:53,882 [10] INFO  - Pomiar o id = 51 zosta³ usuniety z bazy danych
+2020-05-13 12:43:53,892 [12] INFO  - Wywo³anie strony z pomiarami u¿ytkownika o id = 28
+2020-05-13 12:43:53,894 [12] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 12:43:53,894 [12] INFO  - Znaleziono pomiary u¿ytkownika o id = 28
+2020-05-13 12:43:53,894 [12] INFO  - Wyœwietlenie listy pomiarów u¿ytkownika o id = 28
+2020-05-13 12:43:55,078 [11] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:43:58,397 [10] INFO  - Wyœwietlenie formularza tworzenia u¿ytkownika
+2020-05-13 12:43:59,905 [10] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:54:32,900 [6] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 12:54:35,802 [6] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 12:54:40,615 [11] INFO  - Wyœwietlenie formularza tworzenia u¿ytkownika
+2020-05-13 12:54:41,600 [6] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 13:33:23,514 [5] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 13:33:27,437 [5] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 13:33:32,022 [5] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 13:33:32,950 [7] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 13:33:35,414 [5] INFO  - Wywo³anie strony z pomiarami u¿ytkownika o id = 25
+2020-05-13 13:33:35,458 [8] INFO  - Znaleziono u¿ytkownika o id = 25
+2020-05-13 13:33:35,459 [8] INFO  - Znaleziono pomiary u¿ytkownika o id = 25
+2020-05-13 13:33:35,459 [8] INFO  - Wyœwietlenie listy pomiarów u¿ytkownika o id = 25
+2020-05-13 13:33:37,040 [5] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 13:33:38,530 [8] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 25
+2020-05-13 13:33:38,604 [7] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 25
+2020-05-13 13:33:38,604 [14] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 25
+2020-05-13 13:33:38,606 [7] INFO  - Pobrano pomiary dla u¿ytkownika o id = 25 z bazy danych
+2020-05-13 13:33:38,606 [14] INFO  - Pobrano pomiary dla u¿ytkownika o id = 25 z bazy danych
+2020-05-13 13:43:21,586 [5] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 13:43:25,211 [5] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 13:43:30,780 [6] INFO  - Wyœwietlenie formularza dodawania pomiaru dla u¿ytkownika o  id = 28
+2020-05-13 13:43:30,826 [8] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 13:43:39,062 [5] DEBUG - Przekazany model : 17 13.05.2020 13:05:00 28
+2020-05-13 13:43:39,065 [7] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 13:43:40,369 [7] DEBUG - Otrzymana odp od zew API : {"weight":{"kg":"17.00","lb":"37.48"},"height":{"m":"1.23","cm":"123.00","in":"48.43","ft-in":"4-0.4"},"bmi":{"value":"11.2","status":"Severely underweight","risk":"Risk of developing problems such as nutritional deficiency and osteoporosis","prime":"0.5"},"ideal_weight":"14.9kg to 18.2kg","surface_area":"0.78","ponderal_index":"9.1","bmr":{"value":"829.00"},"whtr":{"value":"0.00","status":"Abnormally Slim to Underweight"}}
+2020-05-13 13:43:40,502 [8] INFO  - Odp zew API zapisana do obiektu dto
+2020-05-13 13:43:40,503 [8] INFO  - Dodano BMI do obiektu pomiar, BMI = 11,2
+2020-05-13 13:43:40,504 [8] INFO  - Przekazany obiekt jest prawid³owy
+2020-05-13 13:43:40,725 [6] INFO  - Pomiar dodany do bazy danych
+2020-05-13 13:43:40,730 [6] INFO  - Wyœwietlenie informacji o dodanym pomiarze dla u¿ytkownika o  id = 28
+2020-05-13 13:43:58,421 [5] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:19:11,644 [6] INFO  - Wyœwietlenie strony g³ównej
+2020-05-13 14:19:15,634 [6] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:19:20,711 [6] INFO  - Wywo³anie strony z pomiarami u¿ytkownika o id = 28
+2020-05-13 14:19:20,761 [13] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 14:19:20,762 [13] INFO  - Znaleziono pomiary u¿ytkownika o id = 28
+2020-05-13 14:19:20,762 [13] INFO  - Wyœwietlenie listy pomiarów u¿ytkownika o id = 28
+2020-05-13 14:19:25,317 [6] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:19:28,542 [6] INFO  - Wyœwietlenie formularza dodawania pomiaru dla u¿ytkownika o  id = 28
+2020-05-13 14:19:28,547 [13] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 14:19:38,453 [6] DEBUG - Przekazany model : 20 13.05.2020 14:05:00 28
+2020-05-13 14:19:38,455 [7] INFO  - Znaleziono u¿ytkownika o id = 28
+2020-05-13 14:19:39,211 [7] DEBUG - Otrzymana odp od zew API : {"weight":{"kg":"20.00","lb":"44.09"},"height":{"m":"1.23","cm":"123.00","in":"48.43","ft-in":"4-0.4"},"bmi":{"value":"13.2","status":"Severely underweight","risk":"Risk of developing problems such as nutritional deficiency and osteoporosis","prime":"0.6"},"ideal_weight":"14.9kg to 18.2kg","surface_area":"0.84","ponderal_index":"10.7","bmr":{"value":"859.00"},"whtr":{"value":"0.00","status":"Abnormally Slim to Underweight"}}
+2020-05-13 14:19:39,337 [7] INFO  - Odp zew API zapisana do obiektu dto
+2020-05-13 14:19:39,337 [7] INFO  - Dodano BMI do obiektu pomiar, BMI = 13,2
+2020-05-13 14:19:39,338 [7] INFO  - Przekazany obiekt jest prawid³owy
+2020-05-13 14:19:39,530 [13] INFO  - Pomiar dodany do bazy danych
+2020-05-13 14:19:39,535 [13] INFO  - Wyœwietlenie informacji o dodanym pomiarze dla u¿ytkownika o  id = 28
+2020-05-13 14:19:44,496 [7] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:19:48,999 [7] INFO  - Wyœwietlenie wykresów dla u¿ytkownika o id = 28
+2020-05-13 14:19:49,087 [13] INFO  - Wywo³anie utworzenia wykresu wagi dla u¿ytkownika o id = 28
+2020-05-13 14:19:49,088 [14] INFO  - Wywo³anie utworzenia wykresu wska¿nika BMI dla u¿ytkownika o id = 28
+2020-05-13 14:19:49,090 [13] INFO  - Pobrano pomiary dla u¿ytkownika o id = 28 z bazy danych
+2020-05-13 14:19:49,091 [14] INFO  - Pobrano pomiary dla u¿ytkownika o id = 28 z bazy danych
+2020-05-13 14:19:57,267 [12] INFO  - Wyœwietlenie listy u¿ytkowników
+2020-05-13 14:20:00,244 [13] INFO  - Wyœwietlenie strony Kontakt
+2020-05-13 14:20:01,431 [12] INFO  - Wyœwietlenie strony g³ównej

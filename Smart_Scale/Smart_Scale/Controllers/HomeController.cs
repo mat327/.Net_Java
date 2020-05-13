@@ -10,6 +10,7 @@ using System.Web.Helpers;
 using Smart_Scale.Clients;
 using Newtonsoft.Json;
 using log4net;
+using System.Threading.Tasks;
 
 namespace Smart_Scale.Controllers
 {
@@ -34,14 +35,14 @@ namespace Smart_Scale.Controllers
             }
         }
 
-        public ActionResult Users()
+        public async Task<ActionResult> Users()
         {
             try
             {
                 Log.Info("Wyświetlenie listy użytkowników");
                 ViewBag.Message = "Użytkownicy serwisu";
 
-                return View(db.users.ToList());
+                return View(await db.users.ToListAsync());
             }
             catch (Exception ex)
             {
@@ -69,7 +70,7 @@ namespace Smart_Scale.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateUser([Bind(Include = "Id,Imie,Nazwisko,Plec,Wzrost,Wiek")] User user)
+        public async Task<ActionResult> CreateUser([Bind(Include = "Id,Imie,Nazwisko,Plec,Wzrost,Wiek")] User user)
         {
             try
             {
@@ -78,7 +79,7 @@ namespace Smart_Scale.Controllers
                 {
                     Log.Info("Przekazany obiekt jest prawidłowy");
                     db.users.Add(user);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     Log.Info("Użytkownik dodany do bazy danych");
                     return RedirectToAction("Users");
                 }
@@ -94,13 +95,13 @@ namespace Smart_Scale.Controllers
             }
         }
 
-        public ActionResult Pomiary(int? userid)
+        public async Task<ActionResult> Pomiary(int? userid)
         {
             try
             {
                 Log.Info("Wywołanie strony z pomiarami użytkownika o id = "+userid);
                 int? id = userid;
-                User user = db.users.Find(id);
+                User user = await db.users.FindAsync(id);
                 ViewBag.Message = "Pomiary użytkownika " + user.Imie + " " + user.Nazwisko;
                 Log.Info("Znaleziono użytkownika o id = " + user.Id);
                 var pomiary = from m in db.pomiars
@@ -108,7 +109,7 @@ namespace Smart_Scale.Controllers
                 pomiary = pomiary.Where(s => s.UserId == userid);
                 Log.Info("Znaleziono pomiary użytkownika o id = " + user.Id);
                 Log.Info("Wyświetlenie listy pomiarów użytkownika o id = " + user.Id);
-                return View(pomiary.ToList());
+                return View(await pomiary.ToListAsync());
             }
             catch (Exception ex)
             {
@@ -118,13 +119,13 @@ namespace Smart_Scale.Controllers
             }
         }
 
-        public ActionResult Dodajpomiar(int? userid)
+        public async Task<ActionResult> Dodajpomiar(int? userid)
         {
             try
             {
                 Log.Info("Wyświetlenie formularza dodawania pomiaru dla użytkownika o  id = "+userid);
                 int? id = userid;
-                User user = db.users.Find(id);
+                User user = await db.users.FindAsync(id);
                 ViewBag.Message = "Dodaj pomiar dla użytkownika " + user.Imie + " " + user.Nazwisko;
                 Log.Info("Znaleziono użytkownika o id = " + user.Id);
                 var model = new Pomiar() { Datadodania = DateTime.Now };
@@ -140,18 +141,18 @@ namespace Smart_Scale.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Dodajpomiar([Bind(Include = "Id,Waga,Datadodania,UserId")] Pomiar pomiar)
+        public async Task<ActionResult> Dodajpomiar([Bind(Include = "Id,Waga,Datadodania,UserId")] Pomiar pomiar)
         { 
             try
             {
                 Log.Debug("Przekazany model : " + pomiar.Waga + " " + pomiar.Datadodania + " " + pomiar.UserId);
-                User user = db.users.Find(pomiar.UserId);
+                User user = await db.users.FindAsync(pomiar.UserId);
                 Log.Info("Znaleziono użytkownika o id = "+user.Id);
                 string Waga = pomiar.Waga.ToString(), Wiek = user.Wiek.ToString(), Plec = user.Plec, Wzrost = user.Wzrost.ToString();
-                string response = client.Post2(Waga, Wiek, Plec, Wzrost);
+                string response = await client.Post2(Waga, Wiek, Plec, Wzrost);
                 Log.Debug("Otrzymana odp od zew API : "+ response);
 
-                DTO dto = JsonConvert.DeserializeObject<DTO>(response);
+                DTO dto = await Task.Run(() => JsonConvert.DeserializeObject<DTO>(response));
                 Log.Info("Odp zew API zapisana do obiektu dto");
                 pomiar.Bmi = double.Parse(dto.bmi.value, System.Globalization.CultureInfo.InvariantCulture);
                 Log.Info("Dodano BMI do obiektu pomiar, BMI = " + pomiar.Bmi);
@@ -161,7 +162,7 @@ namespace Smart_Scale.Controllers
                 {
                     Log.Info("Przekazany obiekt jest prawidłowy");
                     db.pomiars.Add(pomiar);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     Log.Info("Pomiar dodany do bazy danych");
                     ViewBag.MessageAdd = "Pomiar został dodany.";
                     ViewBag.Bmi = "Twoje Bmi jest równe " + pomiar.Bmi + " .";
@@ -187,15 +188,15 @@ namespace Smart_Scale.Controllers
 
         }
 
-        public ActionResult Delete(int id, int? userid)
+        public async Task<ActionResult> Delete(int id, int? userid)
         {
             try
             {
                 Log.Info("Wywoałno usunięcie pomiaru id ="+ id + ", użytkownika o id = "+userid);
-                Pomiar pomiar = db.pomiars.Find(id);
+                Pomiar pomiar = await db.pomiars.FindAsync(id);
                 Log.Info("Znaleziono pomiar o id = " + pomiar.Id);
                 db.pomiars.Remove(pomiar);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 Log.Info("Pomiar o id = " + pomiar.Id + " został usuniety z bazy danych");
                 return RedirectToAction("Pomiary", new { userid = userid });
             }
@@ -207,7 +208,7 @@ namespace Smart_Scale.Controllers
             }
         }
 
-        public ActionResult Wykres(string Imie, int? userid, string Nazwisko)
+        public async Task<ActionResult> Wykres(string Imie, int? userid, string Nazwisko)
         {
             try
             {
@@ -217,7 +218,7 @@ namespace Smart_Scale.Controllers
                               select m;
                 pomiary = pomiary.Where(s => s.UserId == userid);
                 Log.Info("Pobrano pomiary dla użytkownika o id = " + userid + " z bazy danych");
-                return View(pomiary.ToList());
+                return View(await pomiary.ToListAsync());
             }
             catch (Exception ex)
             {
@@ -227,7 +228,7 @@ namespace Smart_Scale.Controllers
             }
         }
 
-        public ActionResult Wykres2(string Imie, int? userid, string Nazwisko)
+        public async Task<ActionResult> Wykres2(string Imie, int? userid, string Nazwisko)
         {
             try
             {
@@ -237,7 +238,7 @@ namespace Smart_Scale.Controllers
                               select m;
                 pomiary = pomiary.Where(s => s.UserId == userid);
                 Log.Info("Pobrano pomiary dla użytkownika o id = " + userid + " z bazy danych");
-                return View(pomiary.ToList());
+                return View(await pomiary.ToListAsync());
             }
             catch (Exception ex)
             {

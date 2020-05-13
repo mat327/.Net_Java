@@ -30,7 +30,7 @@ namespace Smart_Scale.Clients
         }
 
 
-        public string Post2(string Waga, string Wiek, string Plec, string Wzrost)
+        public async Task<string> Post2(string Waga, string Wiek, string Plec, string Wzrost)
         {
             var client = new RestClient("https://bmi.p.rapidapi.com/");
             var request = new RestRequest(Method.POST);
@@ -39,7 +39,7 @@ namespace Smart_Scale.Clients
             request.AddHeader("content-type", "application/json");
             request.AddHeader("accept", "application/json");
             request.AddParameter("application/json", "{\"weight\":{\"value\":\""+ Waga +"\",\"unit\":\"kg\"},\"height\":{\"value\":\""+ Wzrost +"\",\"unit\":\"cm\"},\"sex\":\""+ Plec+"\",\"age\":\""+Wiek+"\",\"waist\":\"\",\"hip\":\"\"}", ParameterType.RequestBody);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = await client.ExecuteAsync(request);
             return response.Content;
         }
     }
