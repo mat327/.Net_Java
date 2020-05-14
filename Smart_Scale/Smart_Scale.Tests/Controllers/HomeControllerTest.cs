@@ -63,12 +63,12 @@ namespace Smart_Scale.Tests.Controllers
         {
             // Arrange
             HomeController controller = new HomeController();
-            int? zmienna = 1;
+            int? zmienna = 26;
             // Act
             ViewResult result = controller.Pomiary(zmienna) as ViewResult;
 
             // Assert
-            Assert.AreEqual("Pomiary użytkownika Mateusz Białek", result.ViewBag.Message);
+            Assert.AreEqual("Pomiary użytkownika Patryk Nowak", result.ViewBag.Message);
         }
 
         [TestMethod]
@@ -110,7 +110,7 @@ namespace Smart_Scale.Tests.Controllers
             int IDużytkownika = userfromdb.Id;
 
 
-            decimal Waga = 10200; //Add pomiar
+            int Waga = 10200; //Add pomiar
             DateTime Datadodania = new DateTime(2008, 5, 1, 8, 30, 52);
             Pomiar pomiar = new Pomiar() { Waga = Waga, Datadodania = Datadodania, UserId = IDużytkownika };
             db.pomiars.Add(pomiar);
